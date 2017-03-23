@@ -4,6 +4,7 @@ var iterationCount = 100000;
 var max = 100000;
 var min = 0;
 var mockUnsortedFormString = '';
+var mockSortedObect = {};
 
 /*
   We mock up the fake input form string with a much larger string than what would be realistic.
@@ -15,9 +16,17 @@ var mockUnsortedFormString = '';
 
 for (var i = 0; i < iterationCount; i++) {
   var randomAppend = (Math.floor(Math.random() * (max - min)) + min);
-  mockUnsortedFormString += 'test' + randomAppend + '@test.com, ';
+  var emailString = 'test' + randomAppend + '@test.com';
+  mockUnsortedFormString += emailString + ', ';
+  mockSortedObect[emailString] = emailString;
 }
 
 console.time('test');
-emailHelper(mockUnsortedFormString);
+var returnObject = emailHelper(mockUnsortedFormString);
 console.timeEnd('test');
+
+if (JSON.stringify(mockSortedObect) === JSON.stringify(returnObject)) {
+  console.log('Objects match!');
+} else {
+  console.log('Objects do not match!');
+}
