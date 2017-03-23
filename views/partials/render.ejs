@@ -1,0 +1,7 @@
+<div id="render=items">
+  <% if (items) {
+    Object.keys(items).forEach(function(key) { %>
+    <div class="email-entry"><%- items[key] %></div>
+  <% });
+    } %>
+</div>

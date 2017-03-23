@@ -1,0 +1,24 @@
+html {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+.email-entry {
+	margin: 10px 0;
+}
+
+textarea {
+	width: 25%;
+}
+
+input {
+	background: none;
+	border: 1px solid #000;
+	padding: 7px 14px;
+	margin: 3px 0;
+	display: block;
+}
